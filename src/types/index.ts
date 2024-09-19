@@ -11,6 +11,7 @@ export type OrderWithProducts = Order & {
 
 export type ProductWithCategory = Product & {
   category: {
+    id:number;
     name: string;
   }
 }

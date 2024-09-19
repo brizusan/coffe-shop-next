@@ -1,6 +1,6 @@
 import { ListProductTable } from "@/components/product/ListProductTable";
+import { BackButton } from "@/components/ui/BackButton";
 import { prisma } from "@/src/lib/prisma";
-import Link from "next/link";
 
 async function getProductsBySearch(search: string) {
   const filterProducts = await prisma.product.findMany({
@@ -34,14 +34,7 @@ export default async function SearchProductPage({
         resultados de la busqueda :{" "}
         <span className="text-lg uppercase">{searchParams.search}</span>
       </p>
-      <div className="flex justify-end my-6">
-        <Link
-          href="/admin/products"
-          className="bg-amber-400 px-8 py-2 rounded shadow hover:bg-amber-500 font-semibold text-white"
-        >
-          Volver
-        </Link>
-      </div>
+      <BackButton />
       {isEmpty ? (
         <p className="text-xl mt-6 text-center font-semibold text-slate-600 mb-4">
           No hay resultados para la busqueda

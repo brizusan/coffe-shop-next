@@ -22,12 +22,12 @@ export default async function OrderPage({
   const products = await getProducts(params.category);
   return (
     <>
-      <section >
+      <section>
         <h2 className="text-center text-2xl mt-6 lg:text-3xl font-bold  text-amber-400">
           MI PEDIDO
         </h2>
         <p className="subtitle">Elige y personaliza tu pedido</p>
-        <section className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-3 items-start lg:px-6">
+        <section className="grid md:items-center  grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-3 lg:px-6">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
